@@ -172,10 +172,7 @@ async fn create_dbus_server(
         panic!("Lost connection to D-Bus: {}", err);
     });
 
-    let path = format!(
-        "org.mpris.MediaPlayer2.spotifyd.instance{}",
-        std::process::id()
-    );
+    let path = "org.mpris.MediaPlayer2.spotifyd";
 
     // TODO: The first `true` allows us to replace orphaned dbus servers from previous sessions
     // later. We should instead properly release the name when the session ends.
